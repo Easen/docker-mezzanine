@@ -308,8 +308,9 @@ OPTIONAL_APPS = (
 # Instead of doing "from .local_settings import *", we use exec so that
 # local_settings has full access to everything defined in this module.
 # Also force into sys.modules so it's visible to Django's autoreload.
+import sys
 
-f = os.path.join(PROJECT_APP_PATH, "local_settings.py")
+f = os.path.join(PROJECT_APP_PATH, "..", "conf", "local_settings.py")
 if os.path.exists(f):
     import sys
     import imp
